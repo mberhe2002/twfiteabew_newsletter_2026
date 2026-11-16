@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stripe Report August – October 2026</title>
+<style>
+:root { --navy:#1B2F4E; --gold:#E9C46A; --gold-d:#B8862B; --ink:#2B2F36; --muted:#5B6472; --line:#E6EAF0; --soft:#F4F7FB; --bg:#EEF1F5; --card:#FFFFFF; --ok:#2E8B57; --ok-bg:#E6F4EC; --bad:#C0392B; --bad-bg:#FBEAEA; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ink:#E6E9EE; --muted:#A3ACBA; --line:#2C3644; --soft:#1E2733; --bg:#121820; --card:#18202B; --ok-bg:#16301F; --bad-bg:#3A1C1C; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.55 'Segoe UI','Helvetica Neue',Arial,sans-serif; padding:24px 16px; }
+main { max-width:920px; margin:0 auto; }
+.hero { background:var(--navy); color:#fff; border-radius:18px; padding:30px 32px; }
+.brand { font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 8px; }
+.hero h1 { margin:0; font-size:30px; line-height:1.15; }
+.hero p { margin:10px 0 0; color:#D7DEEA; }
+.pill { display:inline-block; margin-top:14px; padding:5px 12px; border-radius:999px; font-size:12px; font-weight:700; letter-spacing:.5px; }
+.pill.ok { background:var(--gold); color:var(--navy); } .pill.warn { background:#F6C9C4; color:#7A1E15; }
+.kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin:18px 0 6px; }
+.kpi { background:var(--card); border-radius:14px; padding:16px 18px; border-top:4px solid var(--gold); box-shadow:0 2px 10px rgba(20,35,60,.05); }
+.kpi.red { border-top-color:var(--bad); } .kpi.green { border-top-color:var(--ok); }
+.kpi .n { font-size:26px; font-weight:800; color:var(--ink); font-variant-numeric:tabular-nums; }
+.kpi .l { font-size:12.5px; color:var(--muted); margin-top:2px; }
+section { background:var(--card); border-radius:16px; padding:22px 24px; margin:16px 0; box-shadow:0 2px 10px rgba(20,35,60,.05); }
+.eyebrow { font-size:11px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; color:var(--gold-d); margin:0 0 4px; }
+h2 { margin:0 0 12px; font-size:20px; color:var(--ink); }
+.note { color:var(--muted); font-size:13px; margin:10px 0 0; }
+.tw { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:14px; }
+th,td { padding:9px 10px; border-bottom:1px solid var(--line); text-align:left; white-space:nowrap; }
+thead th { font-size:12px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:.5px; }
+th.grp { text-align:center; border-bottom:2px solid var(--line); }
+.num { text-align:right; font-variant-numeric:tabular-nums; } .c { text-align:center; }
+.bad-t { color:var(--bad); }
+tr.total td { font-weight:700; border-top:2px solid var(--line); }
+.ok-pill,.bad-pill { display:inline-block; padding:2px 9px; border-radius:999px; font-size:12px; font-weight:600; }
+.ok-pill { background:var(--ok-bg); color:var(--ok); } .bad-pill { background:var(--bad-bg); color:var(--bad); }
+.chart { width:100%; height:auto; } .chart .ok { fill:var(--navy); } .chart .bad { fill:var(--bad); opacity:.85; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chart .ok { fill:#6F95D1; } }
+.chart .grid { stroke:var(--line); } .chart .axis { fill:var(--muted); font-size:11px; } .chart .strong { font-weight:700; font-size:13px; fill:var(--ink); } .chart .val { fill:var(--ink); font-size:11px; font-weight:600; }
+.legend { display:flex; gap:18px; font-size:13px; color:var(--muted); margin:6px 0 0; }
+.sw { display:inline-block; width:12px; height:12px; border-radius:3px; vertical-align:-1px; margin-right:6px; }
+.insights li { margin:0 0 8px; }
+footer { color:var(--muted); font-size:12px; text-align:center; margin:22px 0 4px; }
+@media print { body { background:#fff; padding:0; } section,.kpi { box-shadow:none; border:1px solid #ddd; } section { break-inside:avoid; } }
+</style></head><body><main>
+
+<div class="hero">
+  <p class="brand">Twfite Abew • Stripe Report</p>
+  <h1>August – October 2026: Online Giving</h1>
+  <p>Successful and failed payments by month, money summary, and recurring-donor health.</p>
+  <span class="pill ok">✓ All months reconcile to the cent</span>
+</div>
+
+<div class="kpis">
+  <div class="kpi green"><div class="n">$8,225.00</div><div class="l">134 successful payments</div></div>
+  <div class="kpi"><div class="n">$7,888.37</div><div class="l">Net after $336.63 Stripe fees</div></div>
+  <div class="kpi red"><div class="n">7</div><div class="l">Payments that failed (29 attempts)</div></div>
+  <div class="kpi green"><div class="n">5 of 7</div><div class="l">Failed payments later recovered ($425.00)</div></div>
+  <div class="kpi red"><div class="n">$75.00/mo</div><div class="l">Lost: 2 monthly gifts canceled after failing</div></div>
+</div>
+
+<section>
+  <p class="eyebrow">By month and status</p>
+  <h2>Successful vs failed</h2>
+  <svg viewBox="0 0 640 240" class="chart" role="img" aria-label="Successful vs failed payments by month"><line x1="64" x2="634" y1="204.0" y2="204.0" class="grid"/><text x="56" y="208.0" text-anchor="end" class="axis">$0.00</text><line x1="64" x2="634" y1="110.0" y2="110.0" class="grid"/><text x="56" y="114.0" text-anchor="end" class="axis">$1,425.00</text><line x1="64" x2="634" y1="16.0" y2="16.0" class="grid"/><text x="56" y="20.0" text-anchor="end" class="axis">$2,850.00</text><rect x="99.3" y="29.2" width="56.0" height="174.8" rx="4" class="ok"><title>August 2026 Successful: $2,650.00</title></rect><text x="127.3" y="23.2" text-anchor="middle" class="val">$2,650</text><rect x="161.3" y="101.8" width="56.0" height="102.2" rx="4" class="bad"><title>August 2026 Failed attempts: $1,550.00</title></rect><text x="189.3" y="95.8" text-anchor="middle" class="val">$1,550</text><text x="158.3" y="228" text-anchor="middle" class="axis strong">August</text><rect x="288.0" y="16.0" width="56.0" height="188.0" rx="4" class="ok"><title>September 2026 Successful: $2,850.00</title></rect><text x="316.0" y="10.0" text-anchor="middle" class="val">$2,850</text><rect x="350.0" y="182.6" width="56.0" height="21.4" rx="4" class="bad"><title>September 2026 Failed attempts: $325.00</title></rect><text x="378.0" y="176.6" text-anchor="middle" class="val">$325</text><text x="347.0" y="228" text-anchor="middle" class="axis strong">September</text><rect x="476.7" y="24.2" width="56.0" height="179.8" rx="4" class="ok"><title>October 2026 Successful: $2,725.00</title></rect><text x="504.7" y="18.2" text-anchor="middle" class="val">$2,725</text><rect x="538.7" y="190.8" width="56.0" height="13.2" rx="4" class="bad"><title>October 2026 Failed attempts: $200.00</title></rect><text x="566.7" y="184.8" text-anchor="middle" class="val">$200</text><text x="535.7" y="228" text-anchor="middle" class="axis strong">October</text></svg>
+  <div class="legend"><span><i class="sw" style="background:var(--navy)"></i>Successful</span><span><i class="sw" style="background:var(--bad)"></i>Failed attempts</span></div>
+  <div class="tw" style="margin-top:14px;"><table>
+    <thead><tr><th></th><th class="grp" colspan="3">Successful</th><th class="grp" colspan="3">Failed</th></tr>
+    <tr><th>Month</th><th class="num">Payments</th><th class="num">Amount</th><th class="num">Donors</th><th class="num">Attempts</th><th class="num">Payments</th><th class="num">Donors</th></tr></thead>
+    <tbody><tr class=''><td>August 2026</td><td class='num'>44</td><td class='num'>$2,650.00</td><td class='num'>43</td><td class='num bad-t'>20</td><td class='num bad-t'>5</td><td class='num bad-t'>5</td></tr><tr class=''><td>September 2026</td><td class='num'>46</td><td class='num'>$2,850.00</td><td class='num'>44</td><td class='num bad-t'>5</td><td class='num bad-t'>2</td><td class='num bad-t'>2</td></tr><tr class=''><td>October 2026</td><td class='num'>44</td><td class='num'>$2,725.00</td><td class='num'>43</td><td class='num bad-t'>4</td><td class='num bad-t'>1</td><td class='num bad-t'>1</td></tr><tr class='total'><td>Total</td><td class='num'>134</td><td class='num'>$8,225.00</td><td class='num'>–</td><td class='num bad-t'>29</td><td class='num bad-t'>7</td><td class='num'>–</td></tr></tbody></table></div>
+  <p class="note">Stripe automatically retries a declined monthly payment several times, so one failed payment can show many attempts. The failed-attempt bars show amounts attempted; no money was received for them. The total of 7 failed payments is less than the monthly figures added up (8) because some payments kept failing into the next month.</p>
+</section>
+
+<section>
+  <p class="eyebrow">Follow-up</p>
+  <h2>What happened to the failed payments</h2>
+  <div class="tw"><table>
+    <thead><tr><th>First failed</th><th class="num">Amount</th><th class="num">Attempts</th><th>Reason</th><th>Outcome</th></tr></thead>
+    <tbody><tr class=''><td>Aug</td><td class='num'>$25.00</td><td class='num'>2</td><td>Linked payment account disconnected</td><td><span class=bad-pill>Not recovered - subscription canceled</span></td></tr><tr class=''><td>Aug</td><td class='num'>$100.00</td><td class='num'>7</td><td>Declined by bank (do not honor)</td><td><span class=ok-pill>Recovered 2026-08-29</span></td></tr><tr class=''><td>Aug</td><td class='num'>$50.00</td><td class='num'>1</td><td>Insufficient funds</td><td><span class=ok-pill>Recovered 2026-08-18</span></td></tr><tr class=''><td>Aug</td><td class='num'>$100.00</td><td class='num'>5</td><td>Declined by bank (do not honor)</td><td><span class=ok-pill>Recovered 2026-09-01</span></td></tr><tr class=''><td>Aug</td><td class='num'>$50.00</td><td class='num'>9</td><td>Insufficient funds</td><td><span class=bad-pill>Not recovered - subscription canceled</span></td></tr><tr class=''><td>Sep</td><td class='num'>$125.00</td><td class='num'>1</td><td>Card account invalid/closed</td><td><span class=ok-pill>Recovered 2026-09-29</span></td></tr><tr class=''><td>Oct</td><td class='num'>$50.00</td><td class='num'>4</td><td>Insufficient funds</td><td><span class=ok-pill>Recovered 2026-10-24</span></td></tr></tbody></table></div>
+  <ul class="insights note" style="margin-top:14px; padding-left:18px;">
+    <li><strong>5</strong> failed payments were eventually collected after retries ($425.00).</li>
+    <li><strong>2</strong> were not recovered ($75.00); those subscriptions were canceled after the failures. A personal note to these donors could win them back.</li>
+    <li>Donor names and emails are in the separate internal file, not in this report.</li>
+  </ul>
+</section>
+
+<section>
+  <p class="eyebrow">Bank-statement view</p>
+  <h2>Money summary</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Month</th><th class="num">Start</th><th class="num">Gifts</th><th class="num">Fees</th><th class="num">Net</th><th class="num">Paid to bank</th><th class="num">End</th><th class="c">Check</th></tr></thead>
+    <tbody><tr class=''><td>August 2026</td><td class='num'>$119.46</td><td class='num'>$2,650.00</td><td class='num'>−$108.71</td><td class='num'>$2,541.29</td><td class='num'>-$2,468.11</td><td class='num'>$192.64</td><td class='c'><span class=ok-pill>✓ Balanced</span></td></tr><tr class=''><td>September 2026</td><td class='num'>$192.64</td><td class='num'>$2,850.00</td><td class='num'>−$116.52</td><td class='num'>$2,733.48</td><td class='num'>-$2,710.44</td><td class='num'>$215.68</td><td class='c'><span class=ok-pill>✓ Balanced</span></td></tr><tr class=''><td>October 2026</td><td class='num'>$215.68</td><td class='num'>$2,725.00</td><td class='num'>−$111.40</td><td class='num'>$2,613.60</td><td class='num'>-$2,637.60</td><td class='num'>$191.68</td><td class='c'><span class=ok-pill>✓ Balanced</span></td></tr></tbody></table></div>
+  <p class="note">Start + net − paid to bank = end, checked against Stripe's own balance summary for each month. Fees include card processing and Stripe Billing usage fees.</p>
+</section>
+
+<section>
+  <p class="eyebrow">Recurring program</p>
+  <h2>Monthly donors</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Month end</th><th class="num">Active subscriptions</th><th class="num">Monthly recurring value</th><th class="num">Canceled in month</th></tr></thead>
+    <tbody><tr class=''><td>August 2026</td><td class='num'>46</td><td class='num'>$2,800.00</td><td class='num'>1</td></tr><tr class=''><td>September 2026</td><td class='num'>44</td><td class='num'>$2,725.00</td><td class='num'>2</td></tr><tr class=''><td>October 2026</td><td class='num'>44</td><td class='num'>$2,725.00</td><td class='num'>0</td></tr></tbody></table></div>
+  <p class="note">Active subscriptions include any that are past due. Status at each month end is reconstructed from start and cancel dates.</p>
+</section>
+
+<footer>Source: Stripe (TWFITE ABEW account), America/New_York time. Generated November 15, 2026. Aggregates only.</footer>
+</main></body></html>
